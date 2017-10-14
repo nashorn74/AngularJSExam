@@ -37,4 +37,13 @@ angular.module('angularJsexamApp')
     	},function(reason){},function(update){});
     }
 
+    $scope.modifyUserInfo = function(id,name,age) {
+    	var dataPromise = Data.modifyData(
+    		'http://127.0.0.1:52273/user/'+id, 
+    		'&name='+name+'&age='+age);
+    	dataPromise.then(function(results) {
+    		$scope.requestUserList();
+    	},function(reason){},function(update){});
+    }
+
   }]);

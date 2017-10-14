@@ -1,17 +1,19 @@
 <div class="jumbotron">
   <h1>User List</h1>
-  <table class="table">
-    <thead><tr><th>id</th><th>name</th><th>age</th><th>delete</th></tr></thead>
+</div>
+<div class="row">
+  <div class="col-sm-12">
+    <table class="table">
+    <thead><tr><th>id</th><th>name</th><th>age</th><th>edit</th><th>delete</th></tr></thead>
     <tbody>
       <tr ng-repeat="obj in userList">
-        <td class="danger" ng-show="obj.id == 1">{{obj.id}}</td>
-        <td class="danger" ng-show="obj.id == 1">{{obj.name}}</td>
-        <td class="danger" ng-show="obj.id == 1">{{obj.age}}</td>
-        <td ng-show="obj.id != 1">{{obj.id}}</td>
-        <td ng-show="obj.id != 1">{{obj.name}}</td>
-        <td ng-show="obj.id != 1">{{obj.age}}</td>
-        <td><button type="button" class="btn btn-danger btn-sm" ng-click="deleteUserInfo(obj.id)">Danger</button></td>
+        <td>{{obj.id}}</td>
+        <td><input type="text" class="form-control" ng-model="obj.name"></td>
+        <td><input type="text" class="form-control" ng-model="obj.age"></td>
+        <td><button type="button" class="btn btn-warning" ng-click="modifyUserInfo(obj.id,obj.name,obj.age)">Edit</button></td>
+        <td><button type="button" class="btn btn-danger" ng-click="deleteUserInfo(obj.id)">Danger</button></td>
       </tr>
     </tbody>
   </table>
+  </div>
 </div>
