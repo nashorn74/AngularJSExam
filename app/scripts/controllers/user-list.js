@@ -45,5 +45,14 @@ angular.module('angularJsexamApp')
     		$scope.requestUserList();
     	},function(reason){},function(update){});
     }
+    
+    $scope.userInfo = {};
+    $scope.getUserInfo = function(id) {
+    	var dataPromise = Data.getData(
+    		'http://127.0.0.1:52273/user/'+id);
+    	dataPromise.then(function(results) {
+    		$scope.userInfo = results.data;
+    	},function(r){},function(u){});
+    }
 
   }]);
