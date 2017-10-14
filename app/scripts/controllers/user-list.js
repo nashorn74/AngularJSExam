@@ -29,4 +29,12 @@ angular.module('angularJsexamApp')
     	},function(reason){},function(update){});
     }
 
+    $scope.deleteUserInfo = function(id) {
+    	var dataPromise = Data.deleteData(
+    		'http://127.0.0.1:52273/user/'+id, '');
+    	dataPromise.then(function(results) {
+    		$scope.requestUserList();
+    	},function(reason){},function(update){});
+    }
+
   }]);
