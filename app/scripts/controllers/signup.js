@@ -21,7 +21,7 @@ angular.module('angularJsexamApp')
     $scope.age = "";
     $scope.saveUserInfo = function() {
     	var dataPromise = Data.setData(
-    		'http://127.0.0.1:52273/user',
+    		'http://10.0.2.2:52273/user',
     		'&name='+$scope.name+'&age='+$scope.age);
     	dataPromise.then(function(restuls){
     		$scope.name = "";
