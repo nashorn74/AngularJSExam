@@ -73,10 +73,19 @@ angular.module('angularJsexamApp')
   			}
   		}
   	}])
-  .controller('MainCtrl', function () {
+  .controller('MainCtrl', ["$scope", "$location",
+   function ($scope, $location) {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
       'Karma'
     ];
-  });
+
+    $scope.$on('$viewContentLoaded', function() {
+      var os = $location.search().os;
+      if (os != undefined) {
+        window.alert(os);
+      }
+    });
+    
+  }]);
