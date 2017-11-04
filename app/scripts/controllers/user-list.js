@@ -55,4 +55,8 @@ angular.module('angularJsexamApp')
     	},function(r){},function(u){});
     }
 
+    $scope.goUserDetail = function(id) {
+        $state.go('user-detail', {id:id});
+    }
+
   }]);
