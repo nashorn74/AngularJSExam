@@ -14,6 +14,9 @@
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
+    <!-- build:css(.tmp) styles/moriss.css -->
+    <link rel="stylesheet" href="styles/morris.css">
+    <!-- endbuild -->
   </head>
   <body ng-app="angularJsexamApp">
     <!--[if lte IE 8]>
@@ -61,6 +64,10 @@
         <script src="scripts/controllers/user-withdraw.js"></script>
         <script src="scripts/services/session-info.js"></script>
         <script src="scripts/services/session-service.js"></script>
+        <script src="scripts/morris.min.js"></script>
         <!-- endbuild -->
+
+        <!-- use strict 준수하지 않아서 빌드에 포함 불가 -->
+        <script src="scripts/raphael.min.js"></script>
 </body>
 </html>
